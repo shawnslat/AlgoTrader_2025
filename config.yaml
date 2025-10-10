@@ -1,0 +1,35 @@
+# config.yaml
+
+alpaca:
+  api_key:    "YOUR SECRET KEY"
+  api_secret: "YOUR SECRET API"
+  base_url:   "https://paper-api.alpaca.markets"
+
+polygon:
+  api_key: "YOUR API KEY"
+
+# New API keys for sentiment analysis (NOT CURRENTLY IN USE)
+newsapi_token: "YOUR NEWS API KEY"
+grok_api_key: "YOUR GROK KEY"
+
+tickers:
+  - AAPL
+  - TSLA
+  - MSFT
+  - CRWD
+  - NVDA
+  - TEM
+  - VST
+  - V
+  - AMZN
+
+risk_per_trade_pct: 0.2  # Was 1.0; reduces exposure
+max_position_pct: 5.0    # Was 10.0
+stop_loss_pct: 0.05      # Was 0.05; tighten to 5%
+take_profit_pct: 0.10    # New: Sell at 10% gain
+buying_power_pct: 50     # Was 30-100; balanced
+vix_threshold: 25        # New: Skip trades if VIX >25 (add VIX fetch)
+market_hours:
+  start: "09:30"
+  end: "16:00"
+job_interval_minutes: 30
