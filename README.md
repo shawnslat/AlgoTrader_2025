@@ -188,12 +188,3 @@ Notes:
 ## Disclaimers
 
 This software is for educational and research purposes. Markets involve substantial risk. Past performance does not guarantee future results. Use paper trading and validate thoroughly before considering any real capital.
-
-
-## Nice‑to‑have next steps
-
-- Add a `requirements.txt`/lock file and container image for fully reproducible runs
-- Improve VIX/volatility regime handling and macro features
-- Expand unit/integration tests around data, features, and signal gen
-- Add position sizing via Kelly/vol targeting and portfolio constraints
-- Switch secrets to environment variables and add a `.env.example` template
