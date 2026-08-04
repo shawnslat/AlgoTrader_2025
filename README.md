@@ -22,20 +22,25 @@ Automated stock + crypto trading bot with hybrid ML + Q-learning signals, multi-
 ## Quick Start
 
 ```bash
+# 0. (macOS) TA-Lib C library, needed by the ta-lib python package
+brew install ta-lib
+
 # 1. Set up the venv
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-# 2. Edit config.yaml with your API keys (Alpaca, Polygon, Claude, Grok, NewsAPI, Finnhub)
+# 2. Create your config and add YOUR OWN API keys
+#    (Alpaca paper, Polygon, Claude, Grok optional, NewsAPI, Finnhub)
+cp config.example.yaml config.yaml
 
-# 3. Start everything
-python trading_bot_app.py
-
-# Or run components separately:
-python bot_service.py                                  # trading service
+# 3. Run
+python bot_service.py                                    # trading service
 .venv/bin/streamlit run dashboard.py --server.port 8502  # dashboard
-python gui/menu_bar.py                                 # macOS tray icon
+python tray_health.py                                    # macOS menu-bar health dot (optional)
+
+# macOS one-click: "Trading Bot.command" starts all of the above
+# (edit its SEER_DIR path or remove that block if you don't run SEER)
 ```
 
 The bot trades twice on weekdays (defaults: **9:45 AM ET** for gap trades, **2:30 PM ET** for EOD signals). Both windows have ±15-30 min tolerance. Configurable in `config.yaml -> schedule`.
@@ -78,7 +83,7 @@ The rotator's safety rails:
 
 ```text
 Trader_2025/
-├── trading_bot_app.py                # Unified launcher (spawns bot_service + dashboard)
+├── Trading Bot.command               # One-click launcher (bot + dashboard + tray)
 ├── Trader_main_Grok4_20250731.py     # Core trading engine + feature pipeline + backtest
 ├── bot_service.py                    # Background service, IPC server, scheduler
 ├── dashboard.py                      # Streamlit dashboard
