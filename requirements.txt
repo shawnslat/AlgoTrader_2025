@@ -3,7 +3,7 @@ xgboost==3.3.0
 scikit-learn==1.9.0
 pandas==2.3.3
 numpy==2.5.1
-streamlit==1.55.0
+streamlit==1.60.0
 plotly==6.9.0
 PyYAML==6.0.3
 schedule==1.2.2
