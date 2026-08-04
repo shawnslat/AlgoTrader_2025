@@ -18,6 +18,8 @@ Automated stock + crypto trading bot with hybrid ML + Q-learning signals, multi-
 - **Nightly AI journal** -- Claude reviews each trading day's activity and writes an entry to `logs/journal/YYYY-MM.md`
 - **Weekly AI ticker rotation** -- Sunday job aggregates the journal + per-ticker stats and proposes watchlist changes, with safety rails (held positions never rotated out, 50% max churn, audit log)
 - **macOS GUI** -- PyQt6 menu-bar tray app for bot control
+  
+<img width="1292" height="812" alt="Screenshot 2026-08-04 at 07 39 48" src="https://github.com/user-attachments/assets/50510275-bf57-4835-a343-8563d9f91a65" />
 
 ## Quick Start
 
