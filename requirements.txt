@@ -1,7 +1,7 @@
 alpaca-trade-api==3.2.0
 xgboost==3.1.2
 scikit-learn==1.7.2
-pandas==2.3.3
+pandas==3.0.5
 numpy==2.3.5
 streamlit==1.55.0
 plotly==6.6.0
