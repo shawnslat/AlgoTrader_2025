@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlgoTrader 2025 — System Map</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --surface-2: #222220;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --line: #383835;
+    --ring: rgba(255,255,255,0.10);
+    --blue: #3987e5;
+    --orange: #d95926;
+    --aqua: #199e70;
+    --violet: #9085e9;
+    --good: #0ca30c;
+    --warning: #fab219;
+    --serious: #ec835a;
+    --critical: #d03b3b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink-2);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 14px; line-height: 1.5;
+    padding: 28px 20px 60px;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; }
+  h1 { color: var(--ink); font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { color: var(--ink); font-size: 16px; font-weight: 650; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+  section {
+    background: var(--surface);
+    border: 1px solid var(--ring);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-top: 18px;
+  }
+  .sec-cap { color: var(--muted); font-size: 12px; margin-bottom: 14px; }
+
+  /* header ribbon */
+  .ribbon { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--ring); border-radius: 10px;
+    padding: 10px 14px; min-width: 130px;
+  }
+  .tile .k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+  .tile .v { color: var(--ink); font-size: 16px; font-weight: 650; margin-top: 2px; }
+  .tile .v.small { font-size: 13.5px; font-weight: 600; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+
+  /* timeline */
+  .timeline { position: relative; margin: 8px 0 4px; padding-left: 0; }
+  .tl-row { display: flex; gap: 0; align-items: stretch; overflow-x: auto; padding-bottom: 6px; }
+  .tl-item { min-width: 118px; flex: 1; position: relative; padding: 0 6px; }
+  .tl-item::before {
+    content: ""; position: absolute; top: 7px; left: 0; right: 0; height: 2px; background: var(--line);
+  }
+  .tl-item:first-child::before { left: 50%; }
+  .tl-item:last-child::before { right: 50%; }
+  .tl-node {
+    position: relative; width: 12px; height: 12px; border-radius: 50%;
+    margin: 1px auto 8px; border: 2px solid var(--surface);
+  }
+  .tl-time { text-align: center; color: var(--ink); font-weight: 650; font-size: 12.5px; }
+  .tl-what { text-align: center; color: var(--ink-2); font-size: 11.5px; margin-top: 2px; }
+  .tl-who { text-align: center; font-size: 10.5px; margin-top: 3px; color: var(--muted); }
+
+  /* pipeline */
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .stage {
+    background: var(--surface-2); border: 1px solid var(--ring); border-radius: 10px;
+    padding: 12px 16px; position: relative;
+  }
+  .stage h3 { color: var(--ink); font-size: 13.5px; font-weight: 650; display: flex; align-items: center; gap: 8px; }
+  .stage .tag {
+    font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 20px; border: 1px solid var(--ring);
+  }
+  .stage p { font-size: 12.5px; color: var(--ink-2); margin-top: 5px; }
+  .stage .fine { color: var(--muted); font-size: 11.5px; margin-top: 4px; }
+  .arrow { text-align: center; color: var(--muted); font-size: 15px; line-height: 1.5; padding: 1px 0; }
+  .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 50%; background: var(--line);
+    color: var(--ink); font-size: 11px; font-weight: 700; flex: none;
+  }
+
+  /* weights */
+  .wrow { display: grid; grid-template-columns: 170px 1fr 46px; gap: 10px; align-items: center; margin: 7px 0; }
+  .wname { font-size: 12.5px; color: var(--ink-2); text-align: right; }
+  .wbar-track { background: var(--grid); border-radius: 4px; height: 14px; position: relative; }
+  .wbar { height: 14px; border-radius: 4px; }
+  .wval { color: var(--ink); font-size: 12px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 10px 0 14px; }
+  .legend span { font-size: 12px; color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+  /* cards grid */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+  .card { background: var(--surface-2); border: 1px solid var(--ring); border-radius: 10px; padding: 14px 16px; }
+  .card h3 { color: var(--ink); font-size: 13.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .card ul { margin: 4px 0 0 16px; }
+  .card li { font-size: 12.5px; margin: 4px 0; }
+  .pill {
+    font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 20px;
+  }
+  .pill.auto { background: rgba(25,158,112,.15); color: #4cc79a; }
+  .pill.ai { background: rgba(57,135,229,.15); color: #7bb1ef; }
+  .pill.human { background: rgba(250,178,25,.14); color: var(--warning); }
+  .pill.risk { background: rgba(208,59,59,.16); color: #e88a8a; }
+
+  .statusline { display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; margin: 5px 0; }
+  .statusline .ic { flex: none; width: 16px; text-align: center; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th { text-align: left; color: var(--muted); font-weight: 600; font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; padding: 6px 10px; border-bottom: 1px solid var(--grid); }
+  td { padding: 7px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
+  .foot { color: var(--muted); font-size: 11.5px; margin-top: 18px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>AlgoTrader 2025 — how the machine works</h1>
+  <div class="sub">Stock + crypto paper-trading system on Alpaca &nbsp;·&nbsp; intraday autonomous mode &nbsp;·&nbsp; map current as of July 25, 2026</div>
+
+  <div class="ribbon">
+    <div class="tile"><div class="k">Mode</div><div class="v small"><span class="dot" style="background:var(--good)"></span>Autonomous · paper $</div></div>
+    <div class="tile"><div class="k">Cycle</div><div class="v small">Every 30 min · 9:45–3:15 ET</div></div>
+    <div class="tile"><div class="k">Day trading</div><div class="v small">Unlimited (PDT retired 6/2026)</div></div>
+    <div class="tile"><div class="k">Trade floor</div><div class="v small">≥65% confidence · ≥80% full size</div></div>
+    <div class="tile"><div class="k">Health</div><div class="v small">Menu-bar dot + dashboard :8502</div></div>
+  </div>
+
+  <!-- ================= TIMELINE ================= -->
+  <section>
+    <h2>A trading day, end to end</h2>
+    <div class="sec-cap">Everything below fires on its own, every weekday. Blue = AI judgment step · green = rule-based automation · violet = Cowork supervisor sessions.</div>
+    <div class="tl-row">
+      <div class="tl-item"><div class="tl-node" style="background:var(--blue)"></div><div class="tl-time">9:00</div><div class="tl-what">AI watchlist rotation</div><div class="tl-who">Claude picks today's tickers</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--violet)"></div><div class="tl-time">9:20</div><div class="tl-what">Pre-market health check</div><div class="tl-who">Cowork agent</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--aqua)"></div><div class="tl-time">9:45</div><div class="tl-what">First trading cycle</div><div class="tl-who">bot_service</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--aqua)"></div><div class="tl-time">…every 30 min…</div><div class="tl-what">Cycle: signals → gates → orders</div><div class="tl-who">12 cycles/day</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--aqua)"></div><div class="tl-time">3:15</div><div class="tl-what">Last cycle</div><div class="tl-who">bot_service</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--critical)"></div><div class="tl-time">3:30</div><div class="tl-what">Hard entry cutoff</div><div class="tl-who">no new buys after this</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--aqua)"></div><div class="tl-time">4:15</div><div class="tl-what">FIFO trade analysis</div><div class="tl-who">refreshes dashboard P&L</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--violet)"></div><div class="tl-time">4:30</div><div class="tl-what">Post-close audit</div><div class="tl-who">Cowork agent → vault report</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--blue)"></div><div class="tl-time">6:30</div><div class="tl-what">AI journal</div><div class="tl-who">Claude reviews the day</div></div>
+      <div class="tl-item"><div class="tl-node" style="background:var(--blue)"></div><div class="tl-time">Weekly</div><div class="tl-what">Model retrain</div><div class="tl-who">XGBoost on fresh data</div></div>
+    </div>
+  </section>
+
+  <!-- ================= PIPELINE ================= -->
+  <section>
+    <h2>Inside one trading cycle</h2>
+    <div class="sec-cap">This pipeline runs every 30 minutes on each watchlist ticker. Nothing trades unless it survives every stage.</div>
+    <div class="flow">
+      <div class="stage"><h3><span class="num">1</span> Gather <span class="tag" style="color:#4cc79a">data</span></h3>
+        <p>200 days of price bars (Polygon for stocks, Alpaca for crypto) · live VIX level · fresh news headlines (NewsAPI) · FinViz fundamentals · insider &amp; congressional filings · options-flow snapshot.</p>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="stage"><h3><span class="num">2</span> Engineer features <span class="tag" style="color:#4cc79a">math</span></h3>
+        <p>30+ technical indicators per ticker: RSI, MACD, Bollinger, ATR, Stochastic RSI, ADX, IBS, moving-average crossovers, volatility regime, momentum.</p>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="stage"><h3><span class="num">3</span> Model prediction <span class="tag" style="color:#7bb1ef">learned</span></h3>
+        <p>XGBoost classifier (retrained weekly on fresh data) predicts next-move direction. ADX regime detection switches between momentum and mean-reversion playbooks.</p>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="stage"><h3><span class="num">4</span> Reward-agent refinement <span class="tag" style="color:#7bb1ef">reinforcement</span></h3>
+        <p>The Q-learning agent — whose values update from the realized P&amp;L of its own past decisions — can adjust the signal; a moving-average crossover rule can veto or force it.</p>
+        <p class="fine">Young layer: &lt;100 trades of experience so far, so it's one voice among nine, not the driver. Roadmap: PPO agent trained offline on full history.</p>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="stage"><h3><span class="num">5</span> Nine-source confidence vote <span class="tag" style="color:#7bb1ef">consensus</span></h3>
+        <p>Every signal source votes with a weight (chart below). Weighted direction + score decide: <b style="color:var(--ink)">&lt;65% → skip · 65–79% → scaled position · ≥80% → full position</b>.</p>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="stage"><h3><span class="num">6</span> Risk gates <span class="tag" style="color:#e88a8a">rails</span></h3>
+        <p>Dexter AI veto on buys · VIX &gt; 25 risk-off · 12% drawdown kill switch · crypto capped at 25% of portfolio · max 4 concurrent positions · 1% risk per trade · no entries after 3:30 PM.</p>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="stage"><h3><span class="num">7</span> Smart execution <span class="tag" style="color:#4cc79a">orders</span></h3>
+        <p>Limit-first with 1s IOC, market fallback · bracket orders carry the stop &amp; take-profit · fills monitored and logged with confidence + signal breakdown attached.</p>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="stage"><h3><span class="num">8</span> Position management <span class="tag" style="color:#4cc79a">exits</span></h3>
+        <p>Scaled profit-taking: sell 40% at +3%, 30% at +6%, final 30% rides a 3% trailing stop · hard stop-loss at −6% (crypto −15%) · enforced at the top of every cycle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WEIGHTS ================= -->
+  <section>
+    <h2>The nine voters and their weights</h2>
+    <div class="sec-cap">Rebalanced July 2026: the decorrelated trio anchors the score; the news cluster was cut because Claude + Grok read the same headlines.</div>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--aqua)"></span>Independent price/positioning signals</span>
+      <span><span class="sw" style="background:var(--blue)"></span>AI / news judgment</span>
+      <span><span class="sw" style="background:var(--orange)"></span>Model &amp; fundamentals</span>
+    </div>
+    <div class="wrow"><div class="wname">MA crossover (trend)</div><div class="wbar-track"><div class="wbar" style="width:100%;background:var(--aqua)"></div></div><div class="wval">15%</div></div>
+    <div class="wrow"><div class="wname">IBS (mean reversion)</div><div class="wbar-track"><div class="wbar" style="width:100%;background:var(--aqua)"></div></div><div class="wval">15%</div></div>
+    <div class="wrow"><div class="wname">Options flow</div><div class="wbar-track"><div class="wbar" style="width:80%;background:var(--aqua)"></div></div><div class="wval">12%</div></div>
+    <div class="wrow"><div class="wname">ML prediction (XGBoost)</div><div class="wbar-track"><div class="wbar" style="width:86.7%;background:var(--orange)"></div></div><div class="wval">13%</div></div>
+    <div class="wrow"><div class="wname">Technical composite</div><div class="wbar-track"><div class="wbar" style="width:80%;background:var(--orange)"></div></div><div class="wval">12%</div></div>
+    <div class="wrow"><div class="wname">Claude news sentiment</div><div class="wbar-track"><div class="wbar" style="width:66.7%;background:var(--blue)"></div></div><div class="wval">10%</div></div>
+    <div class="wrow"><div class="wname">Grok directional bias</div><div class="wbar-track"><div class="wbar" style="width:53.3%;background:var(--blue)"></div></div><div class="wval">8%</div></div>
+    <div class="wrow"><div class="wname">FinViz fundamentals/risk</div><div class="wbar-track"><div class="wbar" style="width:53.3%;background:var(--orange)"></div></div><div class="wval">8%</div></div>
+    <div class="wrow"><div class="wname">Insider + congress filings</div><div class="wbar-track"><div class="wbar" style="width:46.7%;background:var(--orange)"></div></div><div class="wval">7%</div></div>
+    <div class="sec-cap" style="margin-top:10px">ADX regime gating shifts emphasis between the MA-crossover (trending markets) and IBS (choppy markets) so both are never fully active at once.</div>
+  </section>
+
+  <!-- ================= AI ROLES ================= -->
+  <section>
+    <h2>Where each AI sits</h2>
+    <div class="cards">
+      <div class="card"><h3>Claude <span class="pill ai">judgment</span></h3>
+        <ul>
+          <li><b style="color:var(--ink)">Every cycle:</b> scores news headlines per ticker → sentiment vote</li>
+          <li><b style="color:var(--ink)">9:00 AM:</b> rewrites the watchlist from the journal + per-ticker stats</li>
+          <li><b style="color:var(--ink)">6:30 PM:</b> writes the trading journal (observation only — can't touch config)</li>
+          <li><b style="color:var(--ink)">On demand:</b> portfolio chat advisor in the dashboard</li>
+        </ul>
+      </div>
+      <div class="card"><h3>Grok <span class="pill ai">second opinion</span></h3>
+        <ul>
+          <li>Independent bullish/bearish bias vote per ticker (30-min cache)</li>
+          <li>Backup sentiment scorer if Claude is unavailable</li>
+          <li><span style="color:var(--muted)">Thin today — gets little context. Phase 2 feeds it the bot's own evidence.</span></li>
+        </ul>
+      </div>
+      <div class="card"><h3>Dexter <span class="pill risk">veto gate</span></h3>
+        <ul>
+          <li>Nightly bias file: ok / caution / avoid per ticker</li>
+          <li>"Avoid" blocks new buys (never blocks sells/exits)</li>
+          <li>Fails open if the file is &gt;24h stale — logged, never silently enforced</li>
+        </ul>
+      </div>
+      <div class="card"><h3>Cowork supervisors <span class="pill ai">oversight</span></h3>
+        <ul>
+          <li><b style="color:var(--ink)">9:20 AM:</b> is the bot up? did rotation run? watchlist sane?</li>
+          <li><b style="color:var(--ink)">4:30 PM:</b> full audit — cycles, trades, decision quality → dated report in the vault; falls back to the Alpaca API if the Mac is offline</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEARNING LOOPS ================= -->
+  <section>
+    <h2>How it learns</h2>
+    <div class="cards">
+      <div class="card"><h3>Weekly retrain <span class="pill auto">statistical</span></h3>
+        <ul><li>XGBoost refits on the newest market data every week — the model's view of "what predicts an up-move" stays current.</li></ul></div>
+      <div class="card"><h3>Reward loop <span class="pill auto">reinforcement</span></h3>
+        <ul><li>Every cycle, the Q-agent's action values update from the actual P&amp;L its past choices produced. Exploration is off in live trading — it only exploits what it has learned.</li></ul></div>
+      <div class="card"><h3>Journal → rotation <span class="pill ai">qualitative</span></h3>
+        <ul><li>Claude's nightly review of what worked and what didn't feeds the next morning's ticker selection. The slowest loop, and currently the smartest one.</li></ul></div>
+      <div class="card"><h3>Calibration milestone <span class="pill human">upcoming</span></h3>
+        <ul><li>At ~200 logged trades: fit confidence → real win probability (Platt scaling), then switch position sizing to fractional Kelly. Every trade now logs the data this needs.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ================= HUMAN + SEER ================= -->
+  <section>
+    <h2>What still needs a human — and the SEER sidecar</h2>
+    <div class="cards">
+      <div class="card"><h3>Shawn's calls <span class="pill human">human-in-loop</span></h3>
+        <ul>
+          <li>Watchlist changes &gt;50% churn (parked for approval)</li>
+          <li>Risk-parameter changes, kill-switch resets, manual trades</li>
+          <li>Open now: sell the unmanaged BTC position (no cost basis) · SEER live-vs-paper · rotate API keys</li>
+        </ul>
+      </div>
+      <div class="card"><h3>SEER (Kalshi / Polymarket) <span class="pill auto">paper</span></h3>
+        <ul>
+          <li>60s scanner: bracket &amp; YES/NO arbitrage, crypto 5-min markets, market making</li>
+          <li>Launches automatically with the trader; spread/fee gates verified working</li>
+          <li><b style="color:var(--ink)">Paper mode since 7/25</b> — live disabled until loss tracking is real (hardening items 1–3 in the vault roadmap)</li>
+          <li>Planned bridge: Kalshi macro odds (Fed/CPI) → a 10th signal for the stock bot</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:14px">
+      <table>
+        <tr><th>Safety rail</th><th>What it does</th></tr>
+        <tr><td>Kill switch</td><td>12% portfolio drawdown → flag file blocks all new entries; two-click "Flatten All" in the dashboard cancels everything and halts</td></tr>
+        <tr><td>Rotation rails</td><td>SPY/QQQ permanent · held positions never rotated out · &gt;50% churn needs approval · full audit log</td></tr>
+        <tr><td>Close protection</td><td>Cycles end 3:15 · zero new entries after 3:30 · every fill logged with its full signal breakdown</td></tr>
+        <tr><td>Zero-price guard</td><td>A position with corrupt price data is skipped and logged, never allowed to crash the cycle</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="foot">AlgoTrader 2025 · Trader_2025 + SEER · full history in vault/ (ROADMAP · DECISIONS · CONTROL_MAP · daily_audits) · paper account — not financial advice</div>
+</div>
+</body>
+</html>

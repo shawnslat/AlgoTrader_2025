@@ -1,0 +1,31 @@
+# Secrets — never commit
+config.yaml
+*.pem
+.env
+
+# Runtime state & outputs
+logs/
+data/
+artifacts/
+backups/
+q_table.csv
+tickers_auto.json
+pending_ticker_change.json
+last_decisions.csv
+*.log
+*.db
+
+# Environments & caches
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+.codegraph/
+.claude/
+.vscode/
+.DS_Store
+
+# Builds & archived binaries
+dist/
+*.backup
+*.backup_*

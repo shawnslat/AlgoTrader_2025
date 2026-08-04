@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.shawnslat.algotrader.retrain</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/shawnslat/Documents/GitHub/Trader_2025/.venv/bin/python</string>
+        <string>/Users/shawnslat/Documents/GitHub/Trader_2025/auto_retrain.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/shawnslat/Documents/GitHub/Trader_2025</string>
+
+    <!-- Saturdays (Weekday 6) at 17:00 local time -->
+    <!-- Pre-market weekend so a hot-reload lands before Monday open. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key><integer>6</integer>
+        <key>Hour</key><integer>17</integer>
+        <key>Minute</key><integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/shawnslat/Documents/GitHub/Trader_2025/logs/auto_retrain.stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/shawnslat/Documents/GitHub/Trader_2025/logs/auto_retrain.stderr.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

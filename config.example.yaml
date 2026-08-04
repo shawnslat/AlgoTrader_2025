@@ -1,0 +1,152 @@
+alpaca:
+  api_key: YOUR_API_KEY_HERE
+  api_secret: YOUR_API_SECRET_HERE
+  base_url: https://paper-api.alpaca.markets
+auto_retrain:
+  enabled: true
+  min_precision: 0.0
+backtest:
+  disable_sentiment: true
+  pit_lookback_days: 3
+  slippage_pct: 0.0005
+  transaction_cost_pct: 0.001
+  use_point_in_time_sentiment: false
+buying_power_pct: 55
+claude:
+  api_key: YOUR_API_KEY_HERE
+  model: claude-haiku-4-5-20251001
+confidence:
+  enabled: true
+  full_confidence_threshold: 0.8
+  min_confidence_to_trade: 0.65
+  weight_fundamental: 0.08
+  weight_grok_bias: 0.08
+  weight_ibs: 0.15
+  weight_insider: 0.07
+  weight_ma_crossover: 0.15
+  weight_ml: 0.13
+  weight_options_flow: 0.12
+  weight_sentiment: 0.1
+  weight_technical: 0.12
+crypto:
+  allocation_cap_pct: 25.0
+  enabled: true
+  lookback_days: 365
+  max_position_pct: 2.5
+  min_qty: 0.0001
+  risk_multiplier: 1.5
+  risk_per_trade_pct: 1.0
+  stop_loss_pct: 0.15
+  take_profit_pct: 0.25
+  tickers:
+  - BTC/USD
+  - ETH/USD
+  time_in_force: gtc
+  trading_hours:
+    enabled: false
+day_trading:
+  enabled: true
+  max_day_trades: 100
+dexter_autofetch: true
+dexter_bias_command: bun dexter/dexter-bias.ts --mode bias
+dexter_chat_command: bun dexter/dexter-chat.ts --mode chat
+dexter_ticker_command: bun dexter/dexter-tickers.ts --mode tickers
+drawdown_kill_switch:
+  enabled: true
+  threshold_pct: 0.12
+finnhub:
+  api_key: YOUR_API_KEY_HERE
+grok_api_key: YOUR_GROK_API_KEY_HERE
+grok_bias:
+  cache_minutes: 30
+  enabled: true
+insider_congress:
+  cache_minutes: 60
+  enabled: true
+  lookback_days: 90
+intraday:
+  enabled: true
+  end: '15:15'
+  interval_minutes: 30
+  start: 09:45
+job_interval_minutes: 30
+kelly_sizing:
+  enabled: false
+  fraction: 0.25
+  max_fraction: 0.1
+  min_edge: 0.05
+market_hours:
+  end: '16:00'
+  start: 09:30
+max_concurrent_trades: 4
+max_position_pct: 10.0
+min_trade_value: 10.0
+newsapi_token: YOUR_NEWSAPI_TOKEN_HERE
+notifications:
+  enabled: false
+  webhook_url: ''
+options_flow:
+  cache_minutes: 30
+  enabled: true
+polygon:
+  api_key: YOUR_API_KEY_HERE
+risk_per_trade_pct: 1.0
+scaled_exits:
+  enabled: true
+  tiers:
+  - pct: 0.03
+    sell_fraction: 0.4
+  - pct: 0.06
+    sell_fraction: 0.3
+  - pct: 0.0
+    sell_fraction: 0.3
+    trailing: true
+  trail_pct: 0.03
+schedule:
+  afternoon_run: '14:30'
+  enable_morning_run: true
+  morning_run: 09:45
+  no_new_entries_after: '15:30'
+sentiment:
+  batch_mode: true
+  enabled: true
+  fallback_provider: grok
+  llm_timeout_seconds: 30
+  max_items: 20
+  primary_provider: claude
+sentiment_enhancement:
+  detect_price_divergence: true
+  use_magnitude_scoring: true
+  use_recency_weighting: true
+smart_orders:
+  enabled: true
+  fallback_to_market: true
+  ioc_timeout_seconds: 1
+  limit_improvement_pct: 0.3
+stop_loss_pct: 0.06
+take_profit_pct: 0.12
+tickers:
+- AAPL
+- BTCUSD
+- ETHUSD
+- GOOGL
+- MSFT
+- NVDA
+- QQQ
+- SPY
+trailing_stop:
+  enabled: true
+  trail_pct: 0.03
+use_bracket_orders: true
+vix_threshold: 25
+volatility_adaptation:
+  enabled: true
+  high_vol_multiplier: 0.7
+  high_vol_threshold: 0.6
+  low_vol_multiplier: 1.3
+  low_vol_threshold: 0.45
+  medium_vol_multiplier: 1.0
+  medium_vol_threshold: 0.5
+watchlist_rotation:
+  daily_premarket: true
+  time: 09:00

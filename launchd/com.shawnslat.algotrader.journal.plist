@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.shawnslat.algotrader.journal</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/shawnslat/Documents/GitHub/Trader_2025/.venv/bin/python</string>
+        <string>/Users/shawnslat/Documents/GitHub/Trader_2025/auto_journal.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/shawnslat/Documents/GitHub/Trader_2025</string>
+
+    <!--
+      Run weekdays (Mon-Fri) at 18:30 local time. macOS interprets this as
+      "next time the wall clock matches", so the user's TZ governs. If the
+      Mac is asleep at the scheduled time, launchd will run it as soon as
+      the machine wakes up (StartCalendarInterval semantics).
+    -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Weekday</key><integer>1</integer>
+            <key>Hour</key><integer>18</integer>
+            <key>Minute</key><integer>30</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>2</integer>
+            <key>Hour</key><integer>18</integer>
+            <key>Minute</key><integer>30</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>3</integer>
+            <key>Hour</key><integer>18</integer>
+            <key>Minute</key><integer>30</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>4</integer>
+            <key>Hour</key><integer>18</integer>
+            <key>Minute</key><integer>30</integer>
+        </dict>
+        <dict>
+            <key>Weekday</key><integer>5</integer>
+            <key>Hour</key><integer>18</integer>
+            <key>Minute</key><integer>30</integer>
+        </dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>/Users/shawnslat/Documents/GitHub/Trader_2025/logs/auto_journal.stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/shawnslat/Documents/GitHub/Trader_2025/logs/auto_journal.stderr.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

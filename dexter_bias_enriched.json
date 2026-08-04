@@ -1,0 +1,366 @@
+{
+  "AAPL": {
+    "decision": "avoid",
+    "reason": "Earnings due 2025-12-31, imminent high-risk event",
+    "finviz_fundamentals": {
+      "pe": 34.38,
+      "forward_pe": 28.13,
+      "debt_equity": 1.52,
+      "profit_margin": 26.92,
+      "short_float": 0.77,
+      "insider_trans": -2.34,
+      "rsi_14": 42.98,
+      "beta": 1.09,
+      "recommendation": 2.08,
+      "target_price": 292.26,
+      "price": 256.44,
+      "sma20": -0.99,
+      "sma50": -4.58,
+      "earnings_date": "Jan 29 AMC"
+    },
+    "finviz_risk": {
+      "risk_score": 0,
+      "risk_flags": [],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 09:30:00",
+        "title": "Apple 'has been late to the AI game' and Wall Street wants to know its playbook",
+        "link": "https://www.marketwatch.com/livecoverage/apple-earnings-stock-results-iphone-ai/card/apple-has-been-late-to-the-ai-game-and-wall-street-wants-to-know-its-playbook-BU74Eg85OozMjEfi0cbR?mod=mw_FV",
+        "source": "MarketWatch"
+      },
+      {
+        "date": "2026-01-29 09:29:00",
+        "title": "Tsai Capital: Apple (AAPL) Remains one of the Highest-Quality Businesses on the Planet",
+        "link": "/news/291683/tsai-capital-apple-aapl-remains-one-of-the-highest-quality-businesses-on-the-planet",
+        "source": "Insider Monkey"
+      },
+      {
+        "date": "2026-01-29 09:21:00",
+        "title": "Apple Nears Earnings As Expectations Remain High",
+        "link": "/news/291665/apple-nears-earnings-as-expectations-remain-high",
+        "source": "Benzinga"
+      }
+    ]
+  },
+  "MSFT": {
+    "decision": "avoid",
+    "reason": "Earnings due 2025-12-31, imminent high-risk event",
+    "finviz_fundamentals": {
+      "pe": 30.13,
+      "forward_pe": 25.54,
+      "debt_equity": 0.32,
+      "profit_margin": 39.04,
+      "short_float": 0.75,
+      "insider_trans": -0.19,
+      "rsi_14": 56.05,
+      "beta": 1.08,
+      "recommendation": 1.22,
+      "target_price": 611.95,
+      "price": 481.63,
+      "sma20": 2.38,
+      "sma50": 0.51,
+      "earnings_date": "Jan 28 AMC"
+    },
+    "finviz_risk": {
+      "risk_score": 0,
+      "risk_flags": [],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 09:29:00",
+        "title": "Microsoft Beats December-Quarter Targets, But Stock Falls Late",
+        "link": "https://finance.yahoo.com/m/e980b094-7ceb-3f84-8fe3-3148b7e72821/microsoft-beats.html",
+        "source": "Investor's Business Daily"
+      },
+      {
+        "date": "2026-01-29 09:23:00",
+        "title": "Stock Futures Quietly Higher After Mixed Microsoft, Meta Reports",
+        "link": "/news/291669/stock-futures-quietly-higher-after-mixed-microsoft-meta-reports",
+        "source": "Schaeffer's Research"
+      },
+      {
+        "date": "2026-01-29 09:21:00",
+        "title": "Microsoft stock falls arounds CapEx spending concerns: Earnings",
+        "link": "https://finance.yahoo.com/video/microsoft-stock-falls-arounds-capex-spending-concerns-earnings-142107567.html",
+        "source": "Yahoo Finance Video"
+      }
+    ]
+  },
+  "NVDA": {
+    "decision": "avoid",
+    "reason": "Earnings due 2026-01-31, imminent high-risk event",
+    "finviz_fundamentals": {
+      "pe": 47.44,
+      "forward_pe": 24.72,
+      "debt_equity": 0.09,
+      "profit_margin": 53.01,
+      "short_float": 1.12,
+      "insider_trans": -0.77,
+      "rsi_14": 58.59,
+      "beta": 2.31,
+      "recommendation": 1.34,
+      "target_price": 259.67,
+      "price": 191.52,
+      "sma20": 2.83,
+      "sma50": 4.27,
+      "earnings_date": "Nov 19 AMC"
+    },
+    "finviz_risk": {
+      "risk_score": 0,
+      "risk_flags": [],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 09:25:00",
+        "title": "This Company Just Made a Big Move. Here's What It Means for Investors.",
+        "link": "/news/291679/this-company-just-made-a-big-move-heres-what-it-means-for-investors",
+        "source": "Motley Fool"
+      },
+      {
+        "date": "2026-01-29 09:00:00",
+        "title": "What Microsoft Earnings Mean for Nvidia Stock",
+        "link": "https://www.barrons.com/articles/nvidia-stock-price-microsoft-earnings-meta-d7635958?mod=bar_FV",
+        "source": "Barrons.com"
+      },
+      {
+        "date": "2026-01-29 08:25:00",
+        "title": "Nvidia stock: Morgan Stanley explains what it will take for shares to outperform",
+        "link": "https://finance.yahoo.com/news/nvidia-stock-morgan-stanley-explains-132541442.html",
+        "source": "Investing.com"
+      }
+    ]
+  },
+  "GOOGL": {
+    "decision": "avoid",
+    "reason": "Earnings due 2025-12-31, imminent high-risk event",
+    "finviz_fundamentals": {
+      "pe": 33.15,
+      "forward_pe": 29.8,
+      "debt_equity": 0.11,
+      "profit_margin": 32.23,
+      "short_float": 1.45,
+      "insider_trans": 0.02,
+      "rsi_14": 64.34,
+      "beta": 1.1,
+      "recommendation": 1.37,
+      "target_price": 348.96,
+      "price": 336.01,
+      "sma20": 2.94,
+      "sma50": 6.43,
+      "earnings_date": "Feb 04 AMC"
+    },
+    "finviz_risk": {
+      "risk_score": 0,
+      "risk_flags": [],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 08:42:00",
+        "title": "Meta Stock Is Soaring, Microsoft Is Not. Here's What's Behind the Divergence.",
+        "link": "https://www.barrons.com/articles/meta-stock-price-microsoft-earnings-ai-spending-d12b4f5b?mod=bar_FV",
+        "source": "Barrons.com"
+      },
+      {
+        "date": "2026-01-29 08:31:00",
+        "title": "Tim Cook 'Needs To Go,' Says Ross Gerber Because Apple Missed The AI Boat: 'He Hasn't Done A Thing Really In Years'",
+        "link": "https://finance.yahoo.com/news/tim-cook-needs-says-ross-133110584.html",
+        "source": "Benzinga"
+      },
+      {
+        "date": "2026-01-29 08:00:00",
+        "title": "AppLovin's ad tech business could steal Amazon's lunch",
+        "link": "https://finance.yahoo.com/news/applovins-ad-tech-business-could-steal-amazons-lunch-130055566.html",
+        "source": "Yahoo Finance"
+      }
+    ]
+  },
+  "AMZN": {
+    "decision": "ok",
+    "reason": "No imminent earnings or major negative catalyst detected",
+    "finviz_fundamentals": {
+      "pe": 34.33,
+      "forward_pe": 30.67,
+      "debt_equity": 0.41,
+      "profit_margin": 11.06,
+      "short_float": 0.81,
+      "insider_trans": -0.02,
+      "rsi_14": 58.12,
+      "beta": 1.38,
+      "recommendation": 1.24,
+      "target_price": 298.07,
+      "price": 243.01,
+      "sma20": 2.02,
+      "sma50": 4.63,
+      "earnings_date": "Feb 05 AMC"
+    },
+    "finviz_risk": {
+      "risk_score": 0,
+      "risk_flags": [],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 09:01:00",
+        "title": "Stock Market Today: Dow Edges Higher As Microsoft Dives On Earnings; Meta, Tesla Rally (Live Coverage)",
+        "link": "https://finance.yahoo.com/m/ce704e57-e7b0-34b2-87ce-0e6fdacd4d2e/stock-market-today%3A-dow-edges.html",
+        "source": "Investor's Business Daily"
+      },
+      {
+        "date": "2026-01-29 08:42:00",
+        "title": "US applications for jobless benefits, a proxy for layoffs, tick down to 209,000 last week.",
+        "link": "https://finance.yahoo.com/news/us-applications-jobless-benefits-proxy-134255756.html",
+        "source": "Associated Press Finance"
+      },
+      {
+        "date": "2026-01-29 08:42:00",
+        "title": "Meta Stock Is Soaring, Microsoft Is Not. Here's What's Behind the Divergence.",
+        "link": "https://www.barrons.com/articles/meta-stock-price-microsoft-earnings-ai-spending-d12b4f5b?mod=bar_FV",
+        "source": "Barrons.com"
+      }
+    ]
+  },
+  "META": {
+    "decision": "ok",
+    "reason": "No imminent earnings or major negative catalyst detected",
+    "finviz_fundamentals": {
+      "pe": 28.46,
+      "forward_pe": 19.6,
+      "debt_equity": 0.39,
+      "profit_margin": 30.08,
+      "short_float": 1.5,
+      "insider_trans": -0.09,
+      "rsi_14": 58.59,
+      "beta": 1.28,
+      "recommendation": 1.29,
+      "target_price": 850.52,
+      "price": 668.73,
+      "sma20": 3.59,
+      "sma50": 4.0,
+      "earnings_date": "Jan 28 AMC"
+    },
+    "finviz_risk": {
+      "risk_score": 0,
+      "risk_flags": [],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 09:26:00",
+        "title": "Meta Q4 earnings: Stock surges on plans for increased AI spending",
+        "link": "https://finance.yahoo.com/video/meta-q4-earnings-stock-surges-on-plans-for-increased-ai-spending-142605283.html",
+        "source": "Yahoo Finance Video"
+      },
+      {
+        "date": "2026-01-29 09:26:00",
+        "title": "How Meta's stock found its way back into Wall Street's good graces - for now",
+        "link": "https://www.marketwatch.com/story/how-metas-stock-found-its-way-back-into-wall-streets-good-graces-for-now-1023f2e0?mod=mw_FV",
+        "source": "MarketWatch"
+      },
+      {
+        "date": "2026-01-29 09:24:00",
+        "title": "Meta Shares Jump After Q4 Earnings Beat, Strong Q1 Outlook",
+        "link": "/news/291670/meta-shares-jump-after-q4-earnings-beat-strong-q1-outlook",
+        "source": "Benzinga"
+      }
+    ]
+  },
+  "TSLA": {
+    "decision": "avoid",
+    "reason": "Earnings due 2025-12-31, imminent high-risk event",
+    "finviz_fundamentals": {
+      "pe": 400.02,
+      "forward_pe": 155.55,
+      "debt_equity": 0.1,
+      "profit_margin": 4.0,
+      "short_float": 2.7,
+      "insider_trans": 0.24,
+      "rsi_14": 44.41,
+      "beta": 1.86,
+      "recommendation": 2.69,
+      "target_price": 415.94,
+      "price": 431.46,
+      "sma20": -1.91,
+      "sma50": -2.58,
+      "earnings_date": "Jan 28 AMC"
+    },
+    "finviz_risk": {
+      "risk_score": 10,
+      "risk_flags": [
+        "extreme_pe (400.0)"
+      ],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 09:11:00",
+        "title": "What Makes Tesla (TSLA) a Lucrative Investment?",
+        "link": "/news/291628/what-makes-tesla-tsla-a-lucrative-investment",
+        "source": "Insider Monkey"
+      },
+      {
+        "date": "2026-01-29 08:21:00",
+        "title": "Stock Market Today: Dow Edges Higher As Microsoft Dives On Earnings; Meta, Tesla Rally (Live Coverage)",
+        "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-microsoft-earnings-meta-stock-tesla-stock-apple-earnings?mod=IBD_FV",
+        "source": "Investor's Business Daily"
+      },
+      {
+        "date": "2026-01-29 08:59:00",
+        "title": "Tesla's Optimus 3 will 'move the needle' for US GDP: Elon Musk",
+        "link": "https://finance.yahoo.com/video/teslas-optimus-3-will-move-the-needle-for-us-gdp-elon-musk-135918130.html",
+        "source": "Yahoo Finance Video"
+      }
+    ]
+  },
+  "JPM": {
+    "decision": "ok",
+    "reason": "No imminent earnings or major negative catalyst detected",
+    "finviz_fundamentals": {
+      "pe": 15.03,
+      "forward_pe": 13.02,
+      "debt_equity": 2.6,
+      "profit_margin": 19.89,
+      "short_float": 0.74,
+      "insider_trans": -0.46,
+      "rsi_14": 38.08,
+      "beta": 1.06,
+      "recommendation": 2.03,
+      "target_price": 349.96,
+      "price": 300.77,
+      "sma20": -4.5,
+      "sma50": -3.95,
+      "earnings_date": "Jan 13 BMO"
+    },
+    "finviz_risk": {
+      "risk_score": 10,
+      "risk_flags": [
+        "high_debt (2.6x)"
+      ],
+      "recommendation": "ok"
+    },
+    "finviz_news": [
+      {
+        "date": "2026-01-29 09:25:00",
+        "title": "Bank of America, JPMorgan Chase to contribute $1,000 to Trump Accounts",
+        "link": "https://finance.yahoo.com/m/2749c952-1eba-3638-a715-229dc76cfc29/bank-of-america%2C-jpmorgan.html",
+        "source": "CBS News"
+      },
+      {
+        "date": "2026-01-29 07:20:00",
+        "title": "Auto & Transport Roundup: Market Talk",
+        "link": "https://finance.yahoo.com/m/7c0892fa-879e-314c-bfb1-cd8049ac721f/auto-%26-transport-roundup%3A.html",
+        "source": "The Wall Street Journal"
+      },
+      {
+        "date": "2026-01-29 06:06:00",
+        "title": "J.P. Morgan Names 2 New Top Stocks to Buy",
+        "link": "https://finance.yahoo.com/news/j-p-morgan-names-2-110653424.html",
+        "source": "TipRanks"
+      }
+    ]
+  }
+}
